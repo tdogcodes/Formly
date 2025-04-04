@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-      <p className="text-3xl">Main Page Test</p>
+      <p className="text-3xl">Dashboard</p>
       <div className="flex gap-4 mt-4">
         <LogoutLink>
           <Button>Log out</Button>

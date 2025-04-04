@@ -1,5 +1,6 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import Header from "./_components/_common/header";
 
 export default async function DashboardLayout({
   children,
@@ -15,6 +16,7 @@ export default async function DashboardLayout({
   return (
     <div className="flex min-h-screen w-full flex-col ">
       <div className="w-full flex-1">
+        <Header />
         <div>{children}</div>
       </div>
     </div>
