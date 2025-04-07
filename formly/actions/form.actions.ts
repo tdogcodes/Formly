@@ -59,47 +59,82 @@ export async function createForm(data: { name: string; description: string }) {
     if (!user) {
       return {
         success: false,
-        message: "User not found"
-      }
+        message: "User not found",
+      };
     }
 
     const jsonBlocks = [];
 
     const formSettings = await prisma.formSettings.create({
-        data: {
-            primaryColor: defaultPrimaryColor,
-            backgroundColor: defaultBackgroundColor,
-
-        }
-    })
+      data: {
+        primaryColor: defaultPrimaryColor,
+        backgroundColor: defaultBackgroundColor,
+      },
+    });
 
     const form = await prisma.form.create({
-        data: {
-            name: data.name, 
-            description: data.description,
-            userId: user.id,
-            creatorName: user?.given_name || "",
-            settingsId: formSettings.id
-        }
-    })
+      data: {
+        name: data.name,
+        description: data.description,
+        userId: user.id,
+        creatorName: user?.given_name || "",
+        settingsId: formSettings.id,
+      },
+    });
 
-    if(!form){
-        return {
-            success: false,
-            message: "Failed to create form, please try again",
-        }
+    if (!form) {
+      return {
+        success: false,
+        message: "Failed to create form, please try again",
+      };
     }
 
     return {
-        success: true,
-        message: "Form created successfully",
-        form
-    }
-    
+      success: true,
+      message: "Form created successfully",
+      form,
+    };
   } catch (err) {
     return {
       success: false,
       message: "Failed to create form",
+    };
+  }
+}
+
+export async function fetchAllForms() {
+  try {
+    const session = getKindeServerSession();
+    const user = await session.getUser();
+
+    if (!user) {
+      return {
+        success: false,
+        message: "You are not logged in",
+      };
+    }
+
+    const form = await prisma.form.findMany({
+      where: {
+        userId: user.id,
+      },
+      include: {
+        settings: true,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+
+    return {
+      success: true,
+      message: "Forms fetched successfully",
+      form,
+    };
+  } catch (err) {
+    return {
+      success: false,
+      message: "Failed to fetch forms",
     };
   }
 }

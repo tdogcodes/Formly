@@ -24,8 +24,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { createForm } from "@/actions/form.actions";
+import { toast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
 
 const CreateForm = () => {
+
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const formSchema = z.object({
@@ -43,7 +48,29 @@ const CreateForm = () => {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {};
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+
+    const response = await createForm({
+      name: values.name,
+      description: values.description,
+    });
+
+    if(response.success){
+      setIsOpen(false);
+      toast({
+        title: "Success",
+        description: "Form created successfully",
+      })
+      router.push(`/dashboard/form/builder/${response.form?.formId}`)
+    } else {
+      toast({
+        title: "Error",
+        description: "Something went wrong",
+        variant: "destructive",
+      });
+    }
+    
+  };
 
   return (
     <>
