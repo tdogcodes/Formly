@@ -1,8 +1,9 @@
 import React from 'react'
+import FormBuilder from '../../../_components/formBuilder'
 
 const Builder = () => {
   return (
-    <div>Builder</div>
+    <FormBuilder/>
   )
 }
 
