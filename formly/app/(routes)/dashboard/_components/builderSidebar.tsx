@@ -1,11 +1,27 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator, BreadcrumbPage } from '@/components/ui/breadcrumb'
-import { Separator } from '@/components/ui/separator'
-import { SidebarHeader} from '@/components/ui/sidebar'
-import { Home, Sidebar, FileTextIcon } from 'lucide-react'
-import React from 'react'
+"use client";
+import React, { useState } from "react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
+import { Sidebar, SidebarContent, SidebarHeader } from "@/components/ui/sidebar";
+import { cn } from "@/lib/utils";
+import { Home, FileTextIcon } from "lucide-react";
+import FormSettings from "./_common/formSettings";
+import FormBlockBox from "./_common/formBlockBox";
 
-const BuilderSidebar = ({ rest } : { rest?: React.ComponentProps<typeof Sidebar>}) => {
-
+const BuilderSidebar = ({
+  rest,
+}: {
+  rest?: React.ComponentProps<typeof Sidebar>;
+}) => {
+  const [tab, setTab] = useState<"blocks" | "settings">("blocks");
+  
   return (
     <Sidebar className="border-r left-12 pt-16" {...rest}>
       <SidebarHeader className="bg-white px-0">
@@ -27,7 +43,7 @@ const BuilderSidebar = ({ rest } : { rest?: React.ComponentProps<typeof Sidebar>
                   <BreadcrumbPage className="flex items-center gap-1">
                     <FileTextIcon className="w-4 h-4 mb-[3px]" />
                     <h5 className="truncate flex w-[110px] text-sm">
-                      
+                      Untitled Form
                     </h5>
                   </BreadcrumbPage>
                 </BreadcrumbItem>
@@ -36,8 +52,54 @@ const BuilderSidebar = ({ rest } : { rest?: React.ComponentProps<typeof Sidebar>
           </div>
         </header>
       </SidebarHeader>
+      <SidebarContent
+        className="pt-2 
+      px-5 bg-white"
+      >
+        <div className="w-full">
+          <div
+            className="w-full flex flex-row
+           gap-1 h-[39px] rounded-full bg-gray-100 p-1"
+          >
+            <button
+              className={cn(
+                `p-[5px] flex-1 bg-transparent
+                transition-colors
+                ease-in-out rounded-full text-center
+                font-medium text-sm
+                `,
+                {
+                  "bg-white": tab === "blocks",
+                }
+              )}
+              onClick={() => setTab("blocks")}
+            >
+              Blocks
+            </button>
+            <button
+              className={cn(
+                `p-[5px] flex-1 bg-transparent
+                transition-colors
+                ease-in-out rounded-full text-center
+                font-medium text-sm
+                              `,
+                {
+                  "bg-white": tab === "settings",
+                }
+              )}
+              onClick={() => setTab("settings")}
+            >
+              Settings
+            </button>
+          </div>    
+          {/* {Form Blocks} */}
+          {tab === "blocks" && <FormBlockBox />}
+          {/* {Form Settings} */}
+          {tab === "settings" && <FormSettings />}
+        </div>
+      </SidebarContent>
     </Sidebar>
-  )
-}
+  );
+};
 
-export default BuilderSidebar
+export default BuilderSidebar;

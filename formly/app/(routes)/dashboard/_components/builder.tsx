@@ -9,7 +9,7 @@ const Builder = (props: {
 }) => {
   return (
     <>
-        <BuilderSidebar />
+      <BuilderSidebar />
       <SidebarInset className="!p-0 flex-1">
         <div
           className="w-full h-full"
@@ -17,7 +17,7 @@ const Builder = (props: {
             backgroundColor: defaultBackgroundColor,
           }}
         >
-          <SidebarTrigger className=" absolute top-0 z-50" />
+          <SidebarTrigger className="absolute top-0 z-50" />
           {/*<BuilderCanvas />*/}
           {/*<FloatingShareButton isSidebarOpen={props.isSidebarOpen} />*/}
         </div>
