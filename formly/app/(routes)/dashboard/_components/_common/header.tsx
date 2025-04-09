@@ -102,7 +102,7 @@ const Header = () => {
         </ul>
 
         <div
-          className="max-sm:flex md:hidden 
+          className="sm:flex md:hidden 
         items-center gap-1
         justify-end w-full"
         >

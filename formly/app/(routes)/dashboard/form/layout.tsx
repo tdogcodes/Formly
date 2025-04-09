@@ -7,7 +7,7 @@ export default async function FormLayout({
 }>) {
     return (
       <div
-        className="flex h-[calc(100vh_-_65px)]
+        className="flex h-[calc(100vh_-_65px)] overflow-hidden
      w-full flex-row"
       >
         <div className="flex relative w-[45px]">

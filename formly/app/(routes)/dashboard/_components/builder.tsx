@@ -2,6 +2,7 @@ import React from "react";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import BuilderSidebar from "./builderSidebar";
 import { defaultBackgroundColor } from "@/constant";
+import BuilderCanvas from "./builderCanvas";
 
 
 const Builder = (props: {
@@ -18,7 +19,7 @@ const Builder = (props: {
           }}
         >
           <SidebarTrigger className="absolute top-0 z-50" />
-          {/*<BuilderCanvas />*/}
+          <BuilderCanvas />
           {/*<FloatingShareButton isSidebarOpen={props.isSidebarOpen} />*/}
         </div>
       </SidebarInset>

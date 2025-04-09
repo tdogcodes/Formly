@@ -8,7 +8,7 @@ import FormItem from './_components/_common/formItem';
 
 const Dashboard = () => {
   return (
-    <div className="w-full pt-8">
+    <div className="w-full pt-8 px-4">
       <div className="w-full max-w-6xl mx-auto px-2 md:px-0 pt-1">
         {/* {FORM STATS} */}
         <section className="stats-section w-full">
