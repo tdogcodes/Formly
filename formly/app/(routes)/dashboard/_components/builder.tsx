@@ -3,6 +3,7 @@ import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import BuilderSidebar from "./builderSidebar";
 import { defaultBackgroundColor } from "@/constant";
 import BuilderCanvas from "./builderCanvas";
+import BuilderBlockProperties from "./builderBlockProperties";
 
 
 const Builder = (props: {
@@ -23,7 +24,7 @@ const Builder = (props: {
           {/*<FloatingShareButton isSidebarOpen={props.isSidebarOpen} />*/}
         </div>
       </SidebarInset>
-      {/*<BuilderBlockProperties />*/}
+      <BuilderBlockProperties />
     </>
   )
 }
