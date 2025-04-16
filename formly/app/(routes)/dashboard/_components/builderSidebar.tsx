@@ -9,26 +9,32 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
-import { Sidebar, SidebarContent, SidebarHeader } from "@/components/ui/sidebar";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarHeader,
+} from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import { Home, FileTextIcon } from "lucide-react";
 import FormSettings from "./_common/formSettings";
 import FormBlockBox from "./_common/formBlockBox";
+import { useBuilder } from "@/context/builderProvider";
 
 const BuilderSidebar = ({
   rest,
 }: {
   rest?: React.ComponentProps<typeof Sidebar>;
 }) => {
+  const { formData } = useBuilder();
+
   const [tab, setTab] = useState<"blocks" | "settings">("blocks");
-  
+
   return (
     <Sidebar className="border-r left-12 pt-16" {...rest}>
       <SidebarHeader className="bg-white px-0">
         <header
           className="border-b border-gray-200
-              w-full pt-1 pb-2 flex shrink-0 items-center gap-2
-              "
+              w-full pt-1 pb-2 flex shrink-0 items-center gap-2"
         >
           <div className="flex items-center gap-2 px-4">
             <Home className="-ml-1 w-4 h-4" />
@@ -43,7 +49,7 @@ const BuilderSidebar = ({
                   <BreadcrumbPage className="flex items-center gap-1">
                     <FileTextIcon className="w-4 h-4 mb-[3px]" />
                     <h5 className="truncate flex w-[110px] text-sm">
-                      Untitled Form
+                      {formData?.name || "Untitled"}
                     </h5>
                   </BreadcrumbPage>
                 </BreadcrumbItem>
@@ -91,7 +97,7 @@ const BuilderSidebar = ({
             >
               Settings
             </button>
-          </div>    
+          </div>
           {/* {Form Blocks} */}
           {tab === "blocks" && <FormBlockBox />}
           {/* {Form Settings} */}
