@@ -18,7 +18,7 @@ const BlockButtonElement = ({
     disabled: disabled,
     data: {
       blockType: formBlock.blockType,
-      isBlockBtnElement: true,
+      isBlockButtonElement: true,
     },
   });
   return (

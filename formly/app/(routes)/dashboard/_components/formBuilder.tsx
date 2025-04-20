@@ -21,6 +21,7 @@ const FormBuilder = () => {
   }  
   
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(isPublished ? false : true)
+  
   const mouseSensor = useSensor(MouseSensor, {
     activationConstraint: {
       distance: 8,

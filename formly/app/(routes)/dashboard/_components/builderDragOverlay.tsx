@@ -28,10 +28,10 @@ const BuilderDragOverlay = () => {
     if (!draggedItem) return null;
   
     let fallbackNode = <div>No block drag</div>;
-    const isBlockBtnElement = draggedItem?.data?.current?.isBlockBtnElement;
+    const isBlockButtonElement = draggedItem?.data?.current?.isBlockButtonElement;
     const isCanvasLayout = draggedItem?.data?.current?.isCanvasLayout;
   
-    if (isBlockBtnElement) {
+    if (isBlockButtonElement) {
       const blockType = draggedItem?.data?.current?.blockType as FormBlockType;
       fallbackNode = <BlockButtonDragOverlay formBlock={FormBlocks[blockType]} />;
     }

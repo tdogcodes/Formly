@@ -5,7 +5,7 @@ import { generateUniqueId } from "@/lib/helper";
 import { useParams } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 
-type BulderContextType = {
+type BuilderContextType = {
   loading: boolean;
   formData: FormWithSettings | null;
   setFormData: React.Dispatch<React.SetStateAction<FormWithSettings | null>>;
@@ -41,7 +41,7 @@ type BulderContextType = {
   ) => void;
 };
 
-export const BuilderContext = createContext<BulderContextType | null>(null);
+export const BuilderContext = createContext<BuilderContextType | null>(null);
 
 export default function BuilderContextProvider({
   children,
