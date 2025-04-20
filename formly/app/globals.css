@@ -450,6 +450,10 @@ body {
   transition: all 0.4s;
 }
 
+.cube:hover {
+  cursor: default;
+}
+
 .cube:hover .bg-right,
 .cube:hover .bg,
 .cube:hover .bg-top {
@@ -457,19 +461,11 @@ body {
   box-shadow: #aa78ff 0 5px 30px 5px;
 }
 
-.cube:active {
-  z-index: 9999;
-  animation: bounce 0.1s linear;
-}
-
 @keyframes bounce {
   50% {
     transform: scale(0.9);
   }
-}
-
-  
-}
+}}
 
 @layer base {
   * {

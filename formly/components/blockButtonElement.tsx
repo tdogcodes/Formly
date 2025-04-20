@@ -2,21 +2,55 @@ import { ObjectBlockType } from "@/@types/formBlock.type";
 import React from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { useDraggable} from "@dnd-kit/core";
 
 const BlockButtonElement = ({
-  FormBlock,
+  formBlock,
   disabled,
 }: {
-  FormBlock: ObjectBlockType;
+  formBlock: ObjectBlockType;
   disabled?: boolean;
 }) => {
-  const { icon: Icon, label } = FormBlock.blockButtonElement;
+  const { icon: Icon, label } = formBlock.blockButtonElement;
 
+  const draggable = useDraggable({
+    id: `block-btn-${formBlock.blockType}`,
+    disabled: disabled,
+    data: {
+      blockType: formBlock.blockType,
+      isBlockBtnElement: true,
+    },
+  });
   return (
-    <Button disabled={disabled} className={cn(
-        "flex flex-col gap-2 h-[75px] w-20 cursor-grab shadow-lg hover:!shadow-primary/50 transition duration-800 !bg-white border text-gray-600 hover:ring-1 hover:!ring-primary")}>  
-      <Icon className="!w-8 !h-8 !stroke-[0.9] !cursor-grab" />
-      <h5 className="text-[11.4px] text-gray-600 -mt-1" style={{ fontWeight: 500}}>{label}</h5>
+    <Button
+      disabled={disabled}
+      ref={draggable.setNodeRef}
+      className={cn(
+        `
+        flex flex-col gap-2
+        h-[75px] w-20 cursor-grab
+        !bg-white border
+        text-gray-600
+        hover:bg-white hover:ring-1
+        hover:!ring-primary`,
+        draggable.isDragging && "ring-2 ring-primary shadow-xl",
+        disabled && "!cursor-default !pointer-events-none"
+      )}
+      {...draggable.listeners}
+      {...draggable.attributes}
+    >
+      <Icon
+        className="!w-8 !h-8 
+        !stroke-[0.9]
+          !cursor-grab"
+      />
+      <h5
+        className="text-[11.4px]
+          -mt-1 text-gray-600    "
+        style={{ fontWeight: 500 }}
+      >
+        {label}
+      </h5>
     </Button>
   );
 };

@@ -17,7 +17,7 @@ const FormBlockBox = () => {
     )
 
     const layoutBlocks = filteredBlocks.filter((block)=> block.blockCategory === "Layout")
-    const formBlocks = filteredBlocks.filter((block) => block.blockCategory === "Field")
+    const fieldBlocks = filteredBlocks.filter((block) => block.blockCategory === "Field")
 
   return (
     <div className='w-full'>
@@ -34,10 +34,10 @@ const FormBlockBox = () => {
           <div className='mb-2'>
             <h5 className='text-[13px] text-gray-500 font-medium'>Layout</h5>
             <div className='pt-1 grid grid-cols-3 gap-3'>
-              {layoutBlocks.map((block) => (
+              {layoutBlocks?.map((block) => (
                 <BlockButtonElement
                   key={block.blockType}
-                  FormBlock={block}
+                  formBlock={block}
                   disabled={isPublished}
                 />
               ))}
@@ -48,6 +48,13 @@ const FormBlockBox = () => {
           <div className='mb-2'>
             <h5 className='text-[13px] text-gray-500 font-medium'>Field</h5>
           </div>}
+          {fieldBlocks?.map((block) => (
+                <BlockButtonElement
+                  key={block.blockType}
+                  formBlock={block}
+                  disabled={isPublished}
+                />
+              ))}
         </div>
     </div>
   )
