@@ -43,11 +43,10 @@ const BuilderDragOverlay = () => {
       );
       if (!blockLayout) fallbackNode = <div>No block drag</div>;
       else {
-        const CanvasBlockComponent: React.FC<{ formBlockInstance: any }> =
-          FormBlocks[blockLayout.blockType].canvasComponent;
+        const CanvasBlockComponent = FormBlocks[blockLayout.blockType].canvasComponent;
         fallbackNode = (
           <div className="pointer-events-none">
-            <CanvasBlockComponent formBlockInstance={blockLayout} />
+            <CanvasBlockComponent blockInstance={blockLayout} />
           </div>
         );
       }

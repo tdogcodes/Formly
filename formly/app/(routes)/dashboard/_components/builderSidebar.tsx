@@ -36,7 +36,7 @@ const BuilderSidebar = ({
           className="border-b border-gray-200
               w-full pt-1 pb-2 flex shrink-0 items-center gap-2"
         >
-          <div className="flex items-center gap-2 px-4">
+          <div className="flex items-center gap-2 pl-14">
             <Home className="-ml-1 w-4 h-4" />
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>

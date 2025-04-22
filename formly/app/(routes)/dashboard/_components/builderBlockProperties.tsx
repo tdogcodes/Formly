@@ -4,7 +4,7 @@ import { Eye, Save, Send } from "lucide-react";
 
 const BuilderBlockProperties = () => {
   return (
-    <div className=" relative w-[320px]">
+    <div className="relative w-[320px]">
       <div
         className="fixed right w-[320px]
         bg-white border-l shadow-sm h-screen pb-36
