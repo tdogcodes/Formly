@@ -231,7 +231,7 @@ function CanvasBlockLayoutWrapper({
         )}
 
       <div className="relative">
-        <CanvasBlockLayout />
+        <CanvasBlockLayout blockInstance={blockLayout}/>
       </div>
     </div>
   );
