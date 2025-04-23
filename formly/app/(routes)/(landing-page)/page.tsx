@@ -4,7 +4,6 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 import HampsterLoader from "@/components/hampster";
-import { defaultBackgroundColor } from "@/constant/index";
 import CubeLogo from "@/components/cubeLogo";
 
 export default function LandingPage() {

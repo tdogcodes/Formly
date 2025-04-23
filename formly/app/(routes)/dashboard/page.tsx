@@ -3,7 +3,7 @@ import { fetchAllForms, fetchFormStats } from '@/actions/form.actions';
 import StatsCards from './_components/statsCards';
 import { Separator } from '@/components/ui/separator';
 import CreateForm from './_components/createForm';
-import { Loader } from 'lucide-react';
+import Loader from '@/components/Loader';
 import FormItem from './_components/_common/formItem';
 
 const Dashboard = () => {
@@ -47,7 +47,7 @@ const Dashboard = () => {
           >
             <Suspense
               fallback={[1, 2, 3, 4].map((item) => (
-                <Loader size="3rem" className="animate-spin" />
+                <Loader />
               ))}
             >
               <FormList />

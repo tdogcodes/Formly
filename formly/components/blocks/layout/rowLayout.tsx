@@ -92,9 +92,9 @@ function RowLayoutCanvasComponent({
               {...draggable.attributes}
               role="button"
               className="flex items-center w-full 
-              h-[2px] cursor-move justify-center"
+              h-[2px] cursor-move justify-center py-3"
             >
-              <GripHorizontal size="22px" className="text-muted-foreground mb-1" />
+              <GripHorizontal size="22px" className="text-muted-foreground" />
             </div>
           )}
           <div className="flex flex-wrap gap-2 mt-1">

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import Builder from './builder'
 import { useBuilder } from '@/context/builderProvider'
-import { Loader } from 'lucide-react'
+import Loader from '@/components/Loader'
 import { DndContext, MouseSensor, useSensor, useSensors } from '@dnd-kit/core'
 import BuilderDragOverlay from './builderDragOverlay'
 
@@ -15,7 +15,7 @@ const FormBuilder = () => {
   if(loading){
     return (
       <div className='w-full flex h-56 items-center justify-center'>
-        <Loader size="3rem" className='animate-spin' />
+        <Loader />
       </div>
     )
   }  
