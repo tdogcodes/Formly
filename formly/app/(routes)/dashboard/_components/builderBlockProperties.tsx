@@ -15,11 +15,11 @@ const BuilderBlockProperties = () => {
             className="flex w-full flex-row items-center
                  bg-white pb-2 pt-3 sticky border-b border-gray-200 top-0 gap-2 px-2"
           >
-            <Button size="sm" variant="outline" className="!text-primary !bg-primary/10 !border-primary">
+            <Button size="sm" variant="outline" className="!text-primary !hover:bg-primary/10 !border-primary">
               <Eye/>
               Preview
             </Button>
-            <Button size="sm" variant="outline" className="!text-primary !bg-primary/10 !border-primary">
+            <Button size="sm" variant="outline" className="!text-primary !hover:bg-primary/10 !border-primary">
               <Save/>
               Save
             </Button>

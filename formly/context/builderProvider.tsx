@@ -18,7 +18,7 @@ type BuilderContextType = {
   duplicateBlockLayout: (id: string) => void;
 
   selectedBlockLayout: FormBlockInstance | null;
-  handleSeletedLayout: (blockLayout: FormBlockInstance | null) => void;
+  handleSelectedLayout: (blockLayout: FormBlockInstance | null) => void;
 
   updateBlockLayout: (id: string, childrenBlocks: FormBlockInstance[]) => void;
 
@@ -133,10 +133,10 @@ export default function BuilderContextProvider({
     if (selectedBlockLayout?.id === id) setSeletedBlockLayout(null);
   };
 
-  const handleSeletedLayout = (blockLayout: FormBlockInstance | null) => {
+  const handleSelectedLayout = (blockLayout: FormBlockInstance | null) => {
     setSeletedBlockLayout(blockLayout);
   };
-
+  
   // B.S -> REPOSTION BLOCK LAYOUT
   const repositionBlockLayout = (
     activeId: string,
@@ -236,7 +236,7 @@ export default function BuilderContextProvider({
         removeBlockLayout,
         duplicateBlockLayout,
         selectedBlockLayout,
-        handleSeletedLayout,
+        handleSelectedLayout,
         repositionBlockLayout,
         insertBlockLayoutAtIndex,
         updateBlockLayout,

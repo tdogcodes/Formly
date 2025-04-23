@@ -20,7 +20,7 @@ const BuilderDragOverlay = () => {
         setDraggedItem(null);
       },
       onDragEnd() {
-        console.log("ITEM DRAG CANCEL");
+        console.log("ITEM DRAG END");
         setDraggedItem(null);
       },
     });
@@ -30,6 +30,7 @@ const BuilderDragOverlay = () => {
     let fallbackNode = <div>No block drag</div>;
     const isBlockButtonElement = draggedItem?.data?.current?.isBlockButtonElement;
     const isCanvasLayout = draggedItem?.data?.current?.isCanvasLayout;
+
   
     if (isBlockButtonElement) {
       const blockType = draggedItem?.data?.current?.blockType as FormBlockType;
