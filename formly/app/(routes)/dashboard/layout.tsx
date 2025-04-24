@@ -14,7 +14,14 @@ export default async function DashboardLayout({
     redirect("/api/auth/login?post_login_redirect_url=/dashboard");
   }
   return (
-    <div className="flex min-h-screen w-full flex-col ">
+    <div className="flex min-h-screen w-full flex-col"  style={{
+      width: "full",
+      height: "full",
+      backgroundColor: "#ffffff",
+      backgroundImage: `radial-gradient(rgba(12, 12, 12,) 3px, hsl(262, 95%, 83%, .5) 0)`,
+      backgroundSize: "30px 30px",
+      backgroundPosition: "-5px -5px",
+    }}>
       <div className="w-full flex-1">
         <Header />
         <div>{children}</div>

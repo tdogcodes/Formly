@@ -38,7 +38,7 @@ const FormItem = (props: PropsType) => {
     router.push(`/dashboard/form/builder/${formId}`);
   }, []);
   return (
-    <div onClick={onClick} role="button" className="w-full h-auto">
+    <div onClick={onClick} role="button" className="w-full h-auto bg-white/50">
       <div
         className="w-full relative flex 
       items-center justify-center

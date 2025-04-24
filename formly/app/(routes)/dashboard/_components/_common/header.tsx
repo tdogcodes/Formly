@@ -61,7 +61,7 @@ const Header = () => {
           className="flex flex-1 items-center mr-5 pr-8 
          border-r border-gray-600"
         >
-          <Logo url="/dashboard" />
+          <Logo url="/dashboard"/>
           <span className="sr-only">Formy</span>
         </div>
         <ul className="hidden md:flex flex-row">
