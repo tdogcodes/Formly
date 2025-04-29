@@ -28,7 +28,7 @@ import { createForm } from "@/actions/form.actions";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 
-const CreateForm = () => {
+const  CreateForm = () => {
 
   const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);

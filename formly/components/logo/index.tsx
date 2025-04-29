@@ -13,18 +13,13 @@ const Logo = (props: { url?: string; color?: string }) => {
       <Link href={url} className="flex items-center gap-2">
         <div
           className="size-[40px] lg:size-[50px]
-          rounded-lg flex items-center border-2
+          rounded-lg flex items-center 
            dark:border-gray-200 text-2xl lg:text-3xl
-             justify-center 
-                  "
-          style={{
-            backgroundColor: "#ffffff",
-            backgroundImage: "radial-gradient(rgba(12, 12, 12, 0.171) 2px, hsl(262, 95%, 83%) 0)",
-            backgroundSize: "6px 6px",
-            backgroundPosition: "-5px -5px",
-          }}
-        >
-          💜
+             justify-center italic font-bold text-white 
+              bg-gradient-to-br from-purple-500 to-primary to-90%
+             !font-mono
+                  ">
+          F
         </div>
         <h5
           className={cn(

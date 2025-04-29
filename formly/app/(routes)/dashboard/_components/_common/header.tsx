@@ -50,7 +50,7 @@ const Header = () => {
     <header
       className="
     sticky top-0 z-50 flex h-16 items-center gap-4 
-    !bg-primary px-4 md:px-6
+    !bg-[#28282d] px-4 md:px-6
     "
     >
       <nav
