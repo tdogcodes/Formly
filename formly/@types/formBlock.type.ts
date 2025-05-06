@@ -5,6 +5,8 @@ export type FormBlockType =
   | "RadioSelect"
   | "TextField"
   | "TextArea"
+  | "StarRating"
+  | "Paragraph"
 
 export type HandleBlurFunc = (key: string, value: string) => void;
 
