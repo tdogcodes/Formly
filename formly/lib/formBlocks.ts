@@ -5,6 +5,7 @@ import { TextFieldBlock } from "@/components/blocks/textFieldBlock";
 import { TextAreaBlock } from "@/components/blocks/textAreaBlock";
 import { StarRatingBlock } from "@/components/blocks/starRatingBlock";
 import { ParagraphBlock } from "@/components/blocks/paragraphBlock";
+import { HeadingBlock } from "@/components/blocks/headingBlock";
 
 export const FormBlocks: FormBlocksType = {
     RowLayout: RowLayoutBlock,
@@ -13,4 +14,5 @@ export const FormBlocks: FormBlocksType = {
     TextArea: TextAreaBlock,
     StarRating: StarRatingBlock,
     Paragraph: ParagraphBlock,
+    Heading: HeadingBlock
 } 

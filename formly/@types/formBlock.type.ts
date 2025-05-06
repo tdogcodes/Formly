@@ -7,6 +7,7 @@ export type FormBlockType =
   | "TextArea"
   | "StarRating"
   | "Paragraph"
+  | "Heading"
 
 export type HandleBlurFunc = (key: string, value: string) => void;
 

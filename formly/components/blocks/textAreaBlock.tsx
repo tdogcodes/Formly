@@ -53,7 +53,7 @@ export const TextAreaBlock: ObjectBlockType = {
     id,
     blockType,
     attributes: {
-      label: "Textarea",
+      label: "Text area",
       helperText: "",
       required: false,
       placeHolder: "Enter text here.",
@@ -62,7 +62,7 @@ export const TextAreaBlock: ObjectBlockType = {
   }),
   blockButtonElement: {
     icon: LetterTextIcon, // Replace with your custom icon
-    label: "Textarea",
+    label: "Text area",
   },
   canvasComponent: TextAreaCanvasComponent,
   formComponent: TextAreaFormComponent,
@@ -230,7 +230,7 @@ function TextAreaPropertiesComponent({
     <div className="w-full  pb-4">
       <div className="w-full flex flex-row items-center justify-between gap-1 bg-gray-100 h-auto p-1 px-2 mb-[10px]">
         <span className="text-sm font-medium text-gray-600 tracking-wider">
-          Textarea {positionIndex}
+          Text area {positionIndex}
         </span>
         <ChevronDown className="w-4 h-4" />
       </div>
