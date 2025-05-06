@@ -24,6 +24,7 @@ export type ObjectBlockType = {
   canvasComponent: React.FC<{
     blockInstance: FormBlockInstance;
   }>;
+
   formComponent: React.FC<{
     blockInstance: FormBlockInstance;
     isError?: boolean;

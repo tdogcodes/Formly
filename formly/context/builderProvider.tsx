@@ -112,7 +112,7 @@ export default function BuilderContextProvider({
       const duplicatedLayoutBlock = {
         ...blockToDuplicate,
         id: `layout-${generateUniqueId()}`,
-        childblocks: blockToDuplicate.childBlocks?.map((childblock) => ({
+        childBlocks: blockToDuplicate.childblocks?.map((childblock) => ({
           ...childblock,
           id: generateUniqueId(),
         })),
@@ -208,7 +208,7 @@ export default function BuilderContextProvider({
     setBlockLayouts((prevBlocks) => {
       const updatedBlocks = prevBlocks.map((parentBlock) => {
         if (parentBlock.id === parentId) {
-          const updatedChildblocks = parentBlock.childBlocks?.map(
+          const updatedChildblocks = parentBlock.childblocks?.map(
             (childblock) =>
               childblock.id === childblockId
                 ? { ...childblock, ...updatedBlock }
