@@ -1,9 +1,14 @@
-import React from 'react'
+import { Button } from "@/components/ui/button";
+import { Send } from "lucide-react";
+import React from "react";
 
 const PublishFormButton = () => {
   return (
-    <div>PublishFormButton</div>
-  )
-}
+    <Button size="sm" className="!text-white">
+      <Send />
+      Publish
+    </Button>
+  );
+};
 
-export default PublishFormButton
+export default PublishFormButton;

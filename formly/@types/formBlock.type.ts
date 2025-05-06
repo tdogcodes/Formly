@@ -3,6 +3,7 @@ export type FormCategoryType = "Layout" | "Field";
 export type FormBlockType =
   | "RowLayout"
   | "RadioSelect"
+  | "TextField"
 
 export type HandleBlurFunc = (key: string, value: string) => void;
 

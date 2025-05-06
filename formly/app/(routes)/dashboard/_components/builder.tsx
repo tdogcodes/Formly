@@ -5,10 +5,7 @@ import { defaultBackgroundColor } from "@/constant";
 import BuilderCanvas from "./builderCanvas";
 import BuilderBlockProperties from "./builderBlockProperties";
 
-
-const Builder = (props: {
-    isSidebarOpen: boolean
-}) => {
+const Builder = (props: { isSidebarOpen: boolean }) => {
   return (
     <>
       <BuilderSidebar />
@@ -26,7 +23,7 @@ const Builder = (props: {
       </SidebarInset>
       <BuilderBlockProperties />
     </>
-  )
-}
+  );
+};
 
-export default Builder
+export default Builder;

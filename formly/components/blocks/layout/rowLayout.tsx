@@ -100,13 +100,13 @@ function RowLayoutCanvasComponent({
       console.log(over, "over");
       console.log(active, "active");
 
-      const isBlockkButtonElement = active?.data?.current?.isBlockButtonElement;
+      const isBlockButtonElement = active?.data?.current?.isBlockButtonElement;
       const isLayout = active.data?.current?.blockType;
 
       const overBlockId = over?.id;
 
       if (
-        isBlockkButtonElement &&
+        isBlockButtonElement &&
         !allBlockLayouts.includes(isLayout) &&
         overBlockId === blockInstance.id
       ) {
