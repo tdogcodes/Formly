@@ -48,13 +48,15 @@ const FormBlockBox = () => {
           <div className='mb-2'>
             <h5 className='text-[13px] text-gray-500 font-medium'>Field</h5>
           </div>}
-          {fieldBlocks?.map((block) => (
-                <BlockButtonElement
-                  key={block.blockType}
-                  formBlock={block}
-                  disabled={isPublished}
-                />
-              ))}
+          <div className="pt-1 grid grid-cols-3 gap-3">
+            {fieldBlocks?.map((block) => (
+                  <BlockButtonElement
+                    key={block.blockType}
+                    formBlock={block}
+                    disabled={isPublished}
+                  />
+                ))}
+          </div>
         </div>
     </div>
   )

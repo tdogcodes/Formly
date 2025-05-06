@@ -1,4 +1,3 @@
-"use client";
 import { useEffect, useState } from "react";
 import {
   Form,
@@ -10,23 +9,23 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import {
-  ObjectBlockType,
   FormBlockInstance,
   FormBlockType,
   FormCategoryType,
   HandleBlurFunc,
+  ObjectBlockType,
 } from "@/@types/formBlock.type";
-import { ChevronDown, TextCursorInput } from "lucide-react";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { z } from "zod";
+import { ChevronDown, TextCursorInput } from "lucide-react";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { useBuilder } from "@/context/builderProvider";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useBuilder } from "@/context/builderProvider";
-import { Switch } from "@/components/ui/switch";
+import { Switch } from "../ui/switch";
 
-const blockType: FormBlockType = "TextField";
 const blockCategory: FormCategoryType = "Field";
+const blockType: FormBlockType = "TextField";
 
 type attributesType = {
   label: string;
@@ -85,11 +84,17 @@ function TextFieldCanvasComponent({
       </Label>
       <Input
         readOnly
-        className="!pointer-events-none cursor-default h-10"
+        className="!pointer-events-none 
+        cursor-default h-10"
         placeholder={placeHolder}
       />
       {helperText && (
-        <p className="text-muted-foreground text-[0.8rem]">{helperText}</p>
+        <p
+          className="text-muted-foreground 
+        text-[0.8rem]"
+        >
+          {helperText}
+        </p>
       )}
     </div>
   );
@@ -97,8 +102,14 @@ function TextFieldCanvasComponent({
 
 function TextFieldFormComponent({
   blockInstance,
+  handleBlur,
+  isError: isSubmitError,
+  errorMessage,
 }: {
   blockInstance: FormBlockInstance;
+  handleBlur?: HandleBlurFunc;
+  isError?: boolean;
+  errorMessage?: string;
 }) {
   const block = blockInstance as NewInstance;
   const { helperText, label, placeHolder, required } = block.attributes;
@@ -116,7 +127,7 @@ function TextFieldFormComponent({
     <div className="flex flex-col gap-2 w-full">
       <Label
         className={`text-base !font-normal mb-2 ${
-          isError ? "text-red-500" : ""
+          isError || isSubmitError ? "text-red-500" : ""
         }`}
       >
         {label}
@@ -129,21 +140,28 @@ function TextFieldFormComponent({
           const inputValue = event.target.value;
           const isValid = validateField(inputValue);
           setIsError(!isValid); // Set error state based on validation.
+          if (handleBlur) {
+            handleBlur(block.id, inputValue);
+          }
         }}
-        className={`h-10 ${isError ? "!border-red-500" : ""}`}
+        className={`h-10 ${isError || isSubmitError ? "!border-red-500" : ""}`}
         placeholder={placeHolder}
       />
       {helperText && (
         <p className="text-muted-foreground text-[0.8rem]">{helperText}</p>
       )}
 
-      {isError ? (
+      {isError || isSubmitError ? (
         <p className="text-red-500 text-[0.8rem]">
           {required && value.trim().length === 0
             ? `This field is required.`
             : ""}
         </p>
-      ) : null}
+      ) : (
+        errorMessage && (
+          <p className="text-red-500 text-[0.8rem]">{errorMessage}</p>
+        )
+      )}
     </div>
   );
 }
@@ -162,14 +180,14 @@ function TextFieldPropertiesComponent({
   const { updateChildBlock } = useBuilder();
 
   const form = useForm<propertiesValidateSchemaType>({
-    resolver: zodResolver(propertiesValidateSchema),
+    resolver: zodResolver(propertiesValidateSchema as z.ZodType<propertiesValidateSchemaType>),
+    mode: "onBlur",
     defaultValues: {
       label: block.attributes.label,
       helperText: block.attributes.helperText,
       required: block.attributes.required,
       placeHolder: block.attributes.placeHolder,
     },
-    mode: "onBlur",
   });
 
   useEffect(() => {
@@ -182,7 +200,6 @@ function TextFieldPropertiesComponent({
   }, [block.attributes, form]);
 
   function setChanges(values: propertiesValidateSchemaType) {
-    console.log(parentId, "parentId");
     if (!parentId) return null;
     updateChildBlock(parentId, block.id, {
       ...block,
@@ -226,9 +243,6 @@ function TextFieldPropertiesComponent({
                             label: e.target.value,
                           });
                         }}
-                        onKeyDown={(event) => {
-                          if (event.key === "Enter") event.currentTarget.blur();
-                        }}
                       />
                     </FormControl>
                     <FormDescription></FormDescription>
@@ -259,12 +273,12 @@ function TextFieldPropertiesComponent({
                             helperText: e.target.value,
                           });
                         }}
-                        onKeyDown={(event) => {
-                          if (event.key === "Enter") event.currentTarget.blur();
-                        }}
                       />
                     </FormControl>
-                    <FormDescription className="text-[11px] mt-2 pl-1">
+                    <FormDescription
+                      className="text-[11px] 
+                    mt-2 pl-1"
+                    >
                       Provide a short note to guide users
                     </FormDescription>
                   </div>
@@ -294,9 +308,6 @@ function TextFieldPropertiesComponent({
                             ...form.getValues(),
                             placeHolder: e.target.value,
                           });
-                        }}
-                        onKeyDown={(event) => {
-                          if (event.key === "Enter") event.currentTarget.blur();
                         }}
                       />
                     </FormControl>

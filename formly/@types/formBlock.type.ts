@@ -4,6 +4,7 @@ export type FormBlockType =
   | "RowLayout"
   | "RadioSelect"
   | "TextField"
+  | "TextArea"
 
 export type HandleBlurFunc = (key: string, value: string) => void;
 
