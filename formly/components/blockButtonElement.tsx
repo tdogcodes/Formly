@@ -7,9 +7,11 @@ import { useDraggable} from "@dnd-kit/core";
 const BlockButtonElement = ({
   formBlock,
   disabled,
+  className,
 }: {
   formBlock: ObjectBlockType;
   disabled?: boolean;
+  className?: string;
 }) => {
   const { icon: Icon, label } = formBlock.blockButtonElement;
 
@@ -27,9 +29,10 @@ const BlockButtonElement = ({
       ref={draggable.setNodeRef}
       className={cn(
         `
+        ${className}
         flex flex-col gap-2
         h-[75px] w-20 cursor-grab
-        !bg-white border
+        bg-white border
         text-gray-600
         hover:bg-white hover:ring-1
         hover:!ring-primary`,

@@ -21,7 +21,7 @@ const cubeLogo = (
     <div className="bg-inner"></div>
   </div>
   <motion.div 
-    className={`text relative block overflow-hidden whitespace-nowrap ${styleText}`}
+    className={`text relative block !tracking-wide overflow-hidden whitespace-nowrap ${styleText}`}
     initial="initial"
     animate="animate"
     >
