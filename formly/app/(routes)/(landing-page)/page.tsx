@@ -4,11 +4,11 @@ import {
   LoginLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
-import CubeLogo from "@/app/(routes)/(landing-page)/components/cubeLogo";
+import CubeLogo from "@/app/(routes)/(landing-page)/_components/cubeLogo";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import TapeSection from "./components/tape";
-import LandingPageCard from "./components/landingPageCard";
+import TapeSection from "./_components/tape";
+import LandingPageCard from "./_components/landingPageCard";
 import {
   RadioBlockComponent,
   TextFieldBlockComponent,
@@ -16,7 +16,7 @@ import {
   StarRatingBlockComponent,
   ParagraphBlockComponent,
   HeadingBlockComponent,
-} from "./components/animatedBlocks";
+} from "./_components/animatedBlocks";
 
 export default function LandingPage() {
   const ref1 = useRef(null);

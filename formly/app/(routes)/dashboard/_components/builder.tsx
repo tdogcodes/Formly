@@ -4,6 +4,7 @@ import BuilderSidebar from "./builderSidebar";
 import { defaultBackgroundColor } from "@/constant";
 import BuilderCanvas from "./builderCanvas";
 import BuilderBlockProperties from "./builderBlockProperties";
+import FloatingShareButton from "./_common/FloatingShareButton";
 
 const Builder = (props: { isSidebarOpen: boolean }) => {
   return (
@@ -16,9 +17,9 @@ const Builder = (props: { isSidebarOpen: boolean }) => {
             backgroundColor: defaultBackgroundColor,
           }}
         >
-          <SidebarTrigger className="absolute top-0 z-50" />
+          <SidebarTrigger className=" absolute top-0 z-50" />
           <BuilderCanvas />
-          {/*<FloatingShareButton isSidebarOpen={props.isSidebarOpen} />*/}
+          <FloatingShareButton isSidebarOpen={props.isSidebarOpen} />
         </div>
       </SidebarInset>
       <BuilderBlockProperties />
