@@ -88,8 +88,8 @@ const FormSubmitComponent = (props: {
 
   return (
     <div
-      className="scrollbar w-full h-full
-  overflow-y-auto pt-3 transition-all duration-300
+      className="scrollbar  w-full h-full
+  overflow-y-auto pt-3 transition-all  duration-300
   "
     >
       <div
@@ -112,10 +112,10 @@ const FormSubmitComponent = (props: {
           rounded-md px-1"
           />
 
-          <div className="w-full h-auto">
+          <div className="w-full h-autobg-purple-50">
             {isSubmitted ? (
               <Card
-                className="w-full bg-white border
+                className="w-full bg-purple-50 border
                shadow-sm min-h-[120px] rounded-md !p-0"
               >
                 <CardContent className="px-2 pb-2">
@@ -150,7 +150,7 @@ const FormSubmitComponent = (props: {
                       />
                     );
                   })}
-                  <div className="w-ful">
+                  <div className="w-full flex items-center justify-center mt-4">
                     <Button
                       className="!bg-primary"
                       disabled={isLoading}
@@ -171,7 +171,7 @@ const FormSubmitComponent = (props: {
           justify-center
           mt-5"
           >
-            <p className="text-xs ">Never submit passwords through Formy.ai.</p>
+            <p className="text-sm ">Never submit passwords through Formy.ai.</p>
             <Logo url="#" color="!text-primary" />
           </div>
         </div>

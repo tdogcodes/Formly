@@ -14,7 +14,7 @@ const Page = async ({ params }: { params: { formId: string } }) => {
   }
 
   const blocks = JSON.parse(form.jsonBlocks) as FormBlockInstance[];
-  return <FormSubmitComponent formId={formId} blocks={blocks} />;
+  return <div className="!bg-purple-50"><FormSubmitComponent formId={formId} blocks={blocks} /></div>;
 };
 
 export default Page;
