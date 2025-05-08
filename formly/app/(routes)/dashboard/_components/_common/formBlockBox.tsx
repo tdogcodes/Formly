@@ -5,6 +5,8 @@ import { Separator } from '@/components/ui/separator'
 import { useBuilder } from '@/context/builderProvider'
 import { FormBlocks } from '@/lib/formBlocks'
 import React, { useState } from 'react'
+import AIAssistanceButton from './aiAssistanceButton'
+
 
 const FormBlockBox = () => {
     const { formData } = useBuilder();
@@ -28,6 +30,7 @@ const FormBlockBox = () => {
         value={search}
         onChange={(e)=> setSearch(e.target.value)}
         />
+        <AIAssistanceButton/>
         </div>  
         <div className='flex flex-col space-y-3 w-full'>
           {layoutBlocks.length > 0 && 
