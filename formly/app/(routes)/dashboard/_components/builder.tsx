@@ -4,7 +4,7 @@ import BuilderSidebar from "./builderSidebar";
 import { defaultBackgroundColor } from "@/constant";
 import BuilderCanvas from "./builderCanvas";
 import BuilderBlockProperties from "./builderBlockProperties";
-import FloatingShareButton from "./_common/FloatingShareButton";
+import FloatingShareButton from "./_common/floatingShareButton";
 
 const Builder = (props: { isSidebarOpen: boolean }) => {
   return (
