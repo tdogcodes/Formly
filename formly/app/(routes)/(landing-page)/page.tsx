@@ -39,27 +39,27 @@ export default function LandingPage() {
     >
       <motion.div>
           <RadioBlockComponent
-            className="size-10 absolute z-70  transition-all duration-300 hidden md:block md:top-[400px] md:left-[60px] xl:left-1/4"
+            className="size-10 absolute z-70 hover:rotate-3 transition-all duration-300 hidden md:block md:top-[400px] md:left-[60px] xl:left-1/4"
           />
         <TextFieldBlockComponent
-          className="size-10 absolute z-70  transition-all duration-300 hidden md:block md:top-[300px] md:right-[60px] xl:right-1/4"
+          className="size-10 absolute z-70 hover:-rotate-3 transition-all duration-300 hidden md:block md:top-[300px] md:right-[60px] xl:right-1/4"
         />
         <TextAreaBlockComponent
-          className="size-10 absolute z-70  transition-all duration-300 hidden md:block md:bottom-[300px] -mr-16 md:right-[160px] xl:right-[240px]"
+          className="size-10 absolute z-70 hover:rotate-3 transition-all duration-300 hidden md:block md:bottom-[300px] -mr-16 md:right-[160px] xl:right-[240px]"
         />
         <StarRatingBlockComponent
-          className="size-10 absolute z-70 transition-all duration-300 hidden md:block md:bottom-[200px] md:left-[160px] xl:right-[240px]"
+          className="size-10 absolute z-70 hover:-rotate-3 transition-all duration-300 hidden md:block md:bottom-[200px] md:left-[160px] xl:right-[240px]"
         />
         <ParagraphBlockComponent
-          className="size-10 absolute z-70 transition-all duration-300 hidden md:block md:top-[160px] md:left-[180px] xl:right-[240px]"
+          className="size-10 absolute z-70 hover:-rotate-3 transition-all duration-300 hidden md:block md:top-[160px] md:left-[180px] xl:right-[240px]"
         />
         <HeadingBlockComponent
-          className="size-10 absolute z-70 transition-all duration-300 hidden md:block md:top-[100px] md:right-[180px] xl:right-[240px]"
+          className="size-10 absolute z-70 hover:rotate-3 transition-all duration-300 hidden md:block md:top-[100px] md:right-[180px] xl:right-[240px]"
         />
       </motion.div>
       <div className="flex mt-[180px] justify-center items-center flex-col">
         <CubeLogo
-          outermost="mt-36 h-[120px] flex text-white items-center justify-center max-md:text-6xl md:h-[140px] w-[440px] md:w-[490px]"
+          outermost="mt-36 hover:-rotate-3 h-[120px] flex text-white items-center justify-center max-md:text-6xl md:h-[140px] w-[440px] md:w-[490px]"
           text="Formly"
         />
         <motion.div
@@ -68,7 +68,7 @@ export default function LandingPage() {
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <p className="text-4xl tracking-wider text-center my-8 font-bold text-gray-200">
+          <p className="text-4xl hover:rotate-3 duration-300 ease-in-out tracking-wider text-center my-8 font-bold text-gray-200">
             The most intuitive drag and drop <br /> form building platform.
           </p>
           <section className="flex gap-4 mb-6">
@@ -83,7 +83,7 @@ export default function LandingPage() {
           </section>
         </motion.div>
       </div>
-      <section className="mt-64 flex justify-center items-center flex-col">
+      <section className="mt-64 mb-16 flex justify-center items-center flex-col">
         <motion.h2
           className="text-4xl mb-8 md:text-5xl font-semibold text-white"
           ref={ref1}
@@ -98,7 +98,8 @@ export default function LandingPage() {
           <LandingPageCard />
         </div>
       </section>
-      <section className="mt-52 mb-16 flex justify-center items-center flex-col">
+      <TapeSection />
+      <section className="mt-20 mb-16 flex justify-center items-center flex-col">
         <motion.h2
           className="text-4xl mb-8 md:text-5xl font-semibold text-white"
           ref={ref2}
@@ -113,9 +114,6 @@ export default function LandingPage() {
           <LandingPageCard />
         </div>
       </section>
-      <div className="flex justify-center items-center">
-        <TapeSection />
-      </div>
       <div className="flex flex-col justify-center my-24">
         <h2 className="text-3xl md:text-5xl font-semibold text-white">
           Sign up and get a one month free trial

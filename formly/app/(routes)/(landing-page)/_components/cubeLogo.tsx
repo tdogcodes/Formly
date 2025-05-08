@@ -12,7 +12,7 @@ const cubeLogo = ({
   styleText?: string;
 }) => {
   return (
-    <button className={`btn cube cube-hover ${outermost}`} type="button">
+    <button className={`btn cube italic cube-hover ${outermost}`} type="button">
       <div className="bg-top">
         <div className="bg-inner"></div>
       </div>
@@ -23,7 +23,7 @@ const cubeLogo = ({
         <div className="bg-inner"></div>
       </div>
       <motion.div
-        className={`text relative block !tracking-wide overflow-hidden whitespace-nowrap ${styleText}`}
+        className={`text px-2 relative block !tracking-wide overflow-hidden whitespace-nowrap ${styleText}`}
         initial="initial"
         animate="animate"
       >
