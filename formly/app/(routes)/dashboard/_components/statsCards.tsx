@@ -28,7 +28,7 @@ const StatsCards = (Props: {
                 <CardDescription>Total Responses</CardDescription>
                 <CardTitle className='text-4xl'>
                     {loading ? <Loader className='h-[36px] animate-spin'/>
-                     : data?.conversionRate || 0}
+                     : data?.totalResponses || 0}
                 </CardTitle>
             </CardHeader>
             <CardContent>
