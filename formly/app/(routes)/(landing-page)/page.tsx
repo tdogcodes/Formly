@@ -24,8 +24,7 @@ export default function LandingPage() {
 
   const inView1 = useInView(ref1, { once: true });
   const inView2 = useInView(ref2, { once: true });
-
-
+  
   return (
     <main
       className="flex overflow-x-hidden  h-full w-full flex-col justify-center items-center bg-secondary/50"

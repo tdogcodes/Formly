@@ -5,7 +5,6 @@ import { defaultBackgroundColor, defaultPrimaryColor } from "@/constant";
 import { generateUniqueId } from "@/lib/helper";
 import { prisma } from "@/lib/prismadb";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { cookies } from 'next/headers';
 
 export async function fetchFormStats() {
   try {
@@ -114,15 +113,6 @@ export async function createForm(data: { name: string; description: string }) {
       },
     });
 
-     const isGuest = cookies().get('testUser')?.value === 'true';
-
-    if (isGuest) {
-      return {
-        success: false,
-        message: "Guest users cannot create forms",
-      };
-    }
-
     if (!form) {
       return {
         success: false,
@@ -145,16 +135,6 @@ export async function createForm(data: { name: string; description: string }) {
 
 export async function fetchAllForms() {
   try {
-
-    const isGuest = cookies().get('testUser')?.value === 'true';
-
-    if (isGuest) {
-      return {
-        success: false,
-        message: "Guest users cannot create forms",
-      };
-    }
-
     const session = getKindeServerSession();
     const user = await session.getUser();
 
@@ -201,15 +181,6 @@ export async function saveForm(data: {
     const session = getKindeServerSession();
     const user = await session.getUser();
 
-    const isGuest = cookies().get('testUser')?.value === 'true';
-
-    if (isGuest) {
-      return {
-        success: false,
-        message: "Guest users cannot create forms",
-      };
-    }
-
     if (!user) {
       return {
         success: false,
@@ -250,15 +221,6 @@ export async function updatePublish(formId: string, published: boolean) {
   try {
     const session = getKindeServerSession();
     const user = await session.getUser();
-    
-    const isGuest = cookies().get('testUser')?.value === 'true';
-
-    if (isGuest) {
-      return {
-        success: false,
-        message: "Guest users cannot create forms",
-      };
-    }
 
     if (!user) {
       return {
@@ -313,7 +275,7 @@ export async function fetchPublishFormById(formId: string): Promise<{
         settings: true,
       },
     });
-    
+
     if (!form) {
       return {
         success: false,
@@ -334,24 +296,8 @@ export async function fetchPublishFormById(formId: string): Promise<{
   }
 }
 
-export async function incrementFormView(formId: string) {
-  try {
-    await prisma.form.update({
-      where: { formId },
-      data: {
-        views: {
-          increment: 1,
-        },
-      },
-    });
-  } catch (error) {
-    console.error("Failed to increment view:", error);
-  }
-}
-
 export async function submitResponse(formId: string, response: string) {
   try {
-
     if (!formId) {
       return {
         success: false,
@@ -390,15 +336,6 @@ export async function fetchAllResponseByFormId(formId: string) {
   try {
     const session = getKindeServerSession();
     const user = await session.getUser();
-
-     const isGuest = cookies().get('testUser')?.value === 'true';
-
-    if (isGuest) {
-      return {
-        success: false,
-        message: "Guest users cannot create forms",
-      };
-    }
 
     if (!user) {
       return {
