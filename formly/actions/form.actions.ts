@@ -296,6 +296,21 @@ export async function fetchPublishFormById(formId: string): Promise<{
   }
 }
 
+export async function incrementFormView(formId: string) {
+  try {
+    await prisma.form.update({
+      where: { formId },
+      data: {
+        views: {
+          increment: 1,
+        },
+      },
+    });
+  } catch (error) {
+    console.error("Failed to increment view:", error);
+  }
+}
+
 export async function submitResponse(formId: string, response: string) {
   try {
     if (!formId) {
