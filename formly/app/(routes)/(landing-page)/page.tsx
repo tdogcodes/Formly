@@ -100,7 +100,7 @@ export default function LandingPage() {
           <LandingPageCard 
           title="Use AI to make or edit forms for you"   
            description="Formly uses Gemini 2.0 Flash, it's the light purple sparkles button on the left sidebar."
-           imageUrl="/images/formlyai.png"/>
+           imageUrl="/formlyai.png"/>
         </div>
       </section>
       <TapeSection />
@@ -118,11 +118,11 @@ export default function LandingPage() {
           <LandingPageCard 
           title="Track and share your form responses in real time"
           description="See all your form's responses. You can also copy a link to share your form."
-          imageUrl="/images/formlyres.png" />
+          imageUrl="/formlyres.png" />
           <LandingPageCard 
           title="Analytics on how your forms are performing"
           description="See how people interact with your form, with realtime stats on views and responses." 
-          imageUrl="/images/formstats.png" />
+          imageUrl="/formstats.png" />
         </div>
       </section>
       <div className="flex flex-col justify-center my-24">
