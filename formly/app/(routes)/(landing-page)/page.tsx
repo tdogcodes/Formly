@@ -127,7 +127,7 @@ export default function LandingPage() {
       </section>
       <div className="flex flex-col justify-center my-24">
         <h2 className="text-3xl md:text-5xl font-semibold text-white">
-          Try us out free or just $10 a month.
+          Try us out free.
         </h2>
         <section className="flex justify-center py-12 gap-4">
           <LoginLink>
