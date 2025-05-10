@@ -21,7 +21,7 @@ const LandingPageCard = ({
       <p className="text-2xl font-semibold lg:text-2xl text-center text-gray-900">
         {title}
       </p>
-      <p className="text-lg tracking-tight text-center text-gray-900">
+      <p className="text-md mt-2 tracking-tight text-center text-gray-900">
         {description}
       </p>
       <div className="border rounded-md mt-3">

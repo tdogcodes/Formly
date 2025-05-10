@@ -1,4 +1,4 @@
-import { fetchPublishFormById } from "@/actions/form.actions";
+import { fetchPublishFormById, incrementFormView} from "@/actions/form.actions";
 import React from "react";
 import NotAvaliable from "./_components/notAvailable";
 import { FormBlockInstance } from "@/@types/formBlock.type";
@@ -6,6 +6,8 @@ import FormSubmitComponent from "./_components/formSubmitComponent";
 
 const Page = async ({ params }: { params: { formId: string } }) => {
   const { formId } = params;
+
+   await incrementFormView(formId);
 
   const { form } = await fetchPublishFormById(formId);
 

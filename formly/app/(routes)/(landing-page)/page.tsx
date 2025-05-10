@@ -25,6 +25,7 @@ export default function LandingPage() {
   const inView1 = useInView(ref1, { once: true });
   const inView2 = useInView(ref2, { once: true });
 
+
   return (
     <main
       className="flex overflow-x-hidden  h-full w-full flex-col justify-center items-center bg-secondary/50"
@@ -94,8 +95,13 @@ export default function LandingPage() {
           Build sharable forms in minutes
         </motion.h2>
         <div className="flex flex-col gap-2.5  items-center justify-center">
-          <LandingPageCard />
-          <LandingPageCard />
+          <LandingPageCard
+           title="Build forms like your playing with Legos" 
+           description="Drag and drop your blocks inside a layout & select a layout to customize the blocks."/>
+          <LandingPageCard 
+          title="Use AI to make or edit forms for you"   
+           description="Formly uses Gemini 2.0 Flash, it's the light purple sparkles button on the left sidebar."
+           imageUrl="/images/formlyai.png"/>
         </div>
       </section>
       <TapeSection />
@@ -110,13 +116,19 @@ export default function LandingPage() {
           Track and analyze your responses
         </motion.h2>
         <div className="flex flex-col gap-2.5  items-center justify-center">
-          <LandingPageCard />
-          <LandingPageCard />
+          <LandingPageCard 
+          title="Track and share your form responses in real time"
+          description="See all your form's responses. You can also copy a link to share your form."
+          imageUrl="/images/formlyres.png" />
+          <LandingPageCard 
+          title="Analytics on how your forms are performing"
+          description="See how people interact with your form, with realtime stats on views and responses." 
+          imageUrl="/images/formstats.png" />
         </div>
       </section>
       <div className="flex flex-col justify-center my-24">
         <h2 className="text-3xl md:text-5xl font-semibold text-white">
-          Sign up and get a one month free trial
+          Try us out free or just $10 a month.
         </h2>
         <section className="flex justify-center py-12 gap-4">
           <LoginLink>

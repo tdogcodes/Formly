@@ -2,8 +2,7 @@
 import React, { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import {
-  ActivityIcon,
-  EllipsisIcon,
+  Eye,
   Globe,
   LockKeyholeIcon,
   MessageSquare,
@@ -93,7 +92,6 @@ const FormItem = (props: PropsType) => {
             )}
             {name}
           </span>
-          <EllipsisIcon className="text-gray-700 size-4" />
         </div>
         <div
           className="flex w-full border-t border-gray-300
@@ -117,7 +115,7 @@ const FormItem = (props: PropsType) => {
             flex items-center gap-1 text-[14px]"
             >
               {views}
-              <ActivityIcon
+              <Eye
                 className="text-muted-foreground
                size-[14px]"
               />

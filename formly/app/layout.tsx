@@ -6,7 +6,7 @@ import "./globals.css";
 const dm_sans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Formly.ai",
+  title: "Formly",
   description: "The easiest drag and drop form building platform.",
 };
 
