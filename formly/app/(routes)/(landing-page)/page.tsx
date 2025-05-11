@@ -38,8 +38,8 @@ export default function LandingPage() {
       }}
     >
       <motion.div>
-          <RadioBlockComponent
-            className="size-10 absolute z-70 hover:rotate-3 transition-all duration-300 hidden md:block md:top-[400px] md:left-[60px] xl:left-1/4"
+        <RadioBlockComponent
+            className="size-10 absolute z-70 hover:rotate-3 transition-all duration-300 hidden md:block md:top-[400px] md:left-[55px] xl:left-[25em]"
           />
         <TextFieldBlockComponent
           className="size-10 absolute z-70 hover:-rotate-3 transition-all duration-300 hidden md:block md:top-[300px] md:right-[60px] xl:right-1/4"
