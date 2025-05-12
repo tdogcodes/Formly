@@ -75,7 +75,6 @@ async function FormList() {
       {form?.map((form) => (
         <FormItem
           key={form.id}
-          id={form.id}
           formId={form.formId}
           name={form.name}
           published={form.published}

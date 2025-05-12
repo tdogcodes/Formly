@@ -110,6 +110,7 @@ export async function createForm(data: { name: string; description: string }) {
         creatorName: user?.given_name || "",
         settingsId: formSettings.id,
         jsonBlocks,
+        formId: generateUniqueId(),
       },
     });
 

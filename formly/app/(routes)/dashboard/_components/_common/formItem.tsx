@@ -11,7 +11,6 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { Skeleton } from "@/components/ui/skeleton";
 
 type PropsType = {
-  id: number;
   formId: string;
   name: string;
   responses: number;
@@ -22,7 +21,6 @@ type PropsType = {
 };
 const FormItem = (props: PropsType) => {
   const {
-    id,
     formId,
     name,
     published,
@@ -35,7 +33,8 @@ const FormItem = (props: PropsType) => {
 
   const onClick = useCallback(() => {
     router.push(`/dashboard/form/builder/${formId}`);
-  }, []);
+  }, [formId, router]);
+  
   return (
     <div onClick={onClick} role="button" className="w-full h-auto bg-white/50">
       <div
