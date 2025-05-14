@@ -57,7 +57,7 @@ export default function LandingPage() {
           className="size-10 absolute z-70 hover:rotate-3 transition-all duration-300 hidden md:block md:top-[100px] md:right-[180px] xl:right-[240px]"
         />
       </motion.div>
-      <div className="flex mt-14 lg:mt-36 justify-center items-center flex-col">
+      <div className="flex mt-14 mb-16 lg:mt-36 justify-center items-center flex-col">
         <CubeLogo
           outermost="mt-36 hover:-rotate-3 h-[90px] w-[320px] flex text-white items-center justify-center max-md:text-6xl md:h-[140px] w-[440px] md:w-[490px]"
           text="Formly"
