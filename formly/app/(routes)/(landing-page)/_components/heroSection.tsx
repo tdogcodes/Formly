@@ -640,7 +640,7 @@ const InteractiveHero: React.FC = () => {
           variants={headlineVariants}
           initial="hidden"
           animate="visible"
-          className="text-6xl sm:text-8xl text-white max-w-6xl mb-4"
+          className="text-6xl sm:text-8xl font-medium text-white max-w-6xl mb-4"
         >
           Create and manage
           <br />{" "}
