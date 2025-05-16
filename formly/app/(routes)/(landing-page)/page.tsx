@@ -225,7 +225,7 @@ export default function LandingPage() {
         <InteractiveHero/>
       <section className="mt-64 mb-16 flex justify-center items-center flex-col">
         <motion.h2
-          className="text-6xl z-10 tracking-wide mb-12 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center"
+          className="z-10 mt-16 mb-12 text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center"
           ref={ref1}
           initial={{ opacity: 0, x: "-50%" }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -245,7 +245,7 @@ export default function LandingPage() {
       </section>
       <section className="mt-20 mb-16 flex justify-center items-center flex-col">
         <motion.h2
-          className="z-10 tracking-wide mt-16 mb-12 text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center"
+          className="z-10 mt-16 mb-12 text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center"
           ref={ref2}
           initial={{ opacity: 0, x: "50%" }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -270,7 +270,7 @@ export default function LandingPage() {
       <Integrations/>
       </section>
         <section className="z-10 mb-36 flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <h2 className="z-10 text-center text-6xl font-semibold  text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff]">
+          <h2 className="z-10 mt-16 mb-12 text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center">
             Try us out free.
           </h2>
           <CallToActionButton/>
