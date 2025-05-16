@@ -77,8 +77,8 @@ export default function Integrations() {
                         </p>
                             <a
                                 href="https://github.com/tdogcodes/Formly"
-                                target={"_blank" + "_self"}
-                                rel={"noopener noreferrer" + undefined}
+                                target={"_blank"}
+                                rel={"noopener noreferrer"}
                             >
                                 <motion.button
                                  className="mt-6 w-fit bg-[#aa78ff] tracking-wide text-[#111111] px-5 py-2 rounded-md text-md font-semibold
