@@ -269,7 +269,7 @@ export default function LandingPage() {
       {/* ICON SLIDING VERTICAL */}
       <Integrations/>
       </section>
-        <section className="z-10 my-24 flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <section className="z-10 mb-36 flex flex-col sm:flex-row gap-6 justify-center items-center">
           <h2 className="z-10 text-center text-6xl font-semibold  text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff]">
             Try us out free.
           </h2>
