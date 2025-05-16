@@ -646,7 +646,7 @@ const InteractiveHero: React.FC = () => {
           <br />{" "}
           <span className="inline-block h-[1.2em] sm:h-[1.2em] lg:h-[1.2em] overflow-hidden align-bottom">
             <RotatingText
-              texts={["Forms", "Surveys", "Registrations", "Orders", "Quizzes"]}
+              texts={["Forms", "Surveys", "Registrations", "Invoices", "Quizzes"]}
               mainClassName="text-[#aa78ff] mx-1"
               staggerFrom={"last"}
               initial={{ y: "-100%", opacity: 0 }}
