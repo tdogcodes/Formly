@@ -14,44 +14,45 @@ const integrations = [
     {
         name: "Postgres SQL",
         icon: postgresLogo,
-        description: "Figma is a collaborative interface design tool.",
+        description: "Open-source relational database with strong reliability and features.",
     },
     {
         name: "Prisma",
         icon: prismaLogo,
-        description: "Notion is an all-in-one workspace for notes and docs.",
+        description: "Type-safe ORM for working with databases in Node.js and TypeScript.",
     },
     {
         name: "Gemini",
         icon: geminiLogo,
-        description: "Slack is a powerful team communication platform.",
+        description: "AI model developed by Google, integrated into Formly's editor.",
     },
     {
         name: "Typescript",
         icon: typescriptLogo,
-        description: "Slack is a powerful team communication platform.",
+        description: "Superset of JavaScript that adds static typing.",
     },
     {
         name: "Tailwind",
         icon: tailwindLogo,
-        description: "Relume is a no-code website builder and design system.",
+        description: "Utility-first CSS framework for rapid UI development.",
     },
     {
         name: "Zod",
         icon: zodLogo,
-        description: "Relume is a no-code website builder and design system.",
+        description: "Schema-based validation library focused on TypeScript.",
     },
     {
         name: "Framer Motion",
         icon: framerLogo,
-        description: "Framer is a professional website prototyping tool.",
+        description: "Animation library for smooth, declarative motion in React.",
     },
     {
         name: "Next.js",
         icon: nextLogo,
-        description: "The most popular React framework.",
+        description: "React framework for building fast, server-rendered apps.",
     },
 ];
+
 
 export type IntegrationsType = typeof integrations;
 

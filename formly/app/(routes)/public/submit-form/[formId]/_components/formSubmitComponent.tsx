@@ -122,7 +122,7 @@ const FormSubmitComponent = (props: {
                   <div className="py-4 px-3">
                     <h1 className="text-4xl font-normal">Thank You</h1>
                     <p className="mt-2 mb-8 text-base">
-                      Got it, We'll notify you with a feedback
+                      Your response has been submitted successfully!
                     </p>
                     <a
                       href="#"
