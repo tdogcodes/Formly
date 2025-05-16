@@ -166,7 +166,7 @@ body {
 }
 
 .cube:hover .bg-inner {
-  background: #aa78ff;
+  background: rgb(170, 120, 255);
   transition: all 0.4s;
 }
 
