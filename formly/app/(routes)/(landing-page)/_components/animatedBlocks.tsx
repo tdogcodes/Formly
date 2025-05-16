@@ -16,7 +16,7 @@ const HeadingBlock = fieldBlocks.find((block) => block.blockType === 'Heading')
 export const RadioBlockComponent = (
   {className}
   :
-  {className: string}) => (
+  {className?: string}) => (
   <div className={className}>
     <BlockButtonElement
       formBlock={RadioBlock as any}
@@ -29,7 +29,7 @@ export const RadioBlockComponent = (
 export const TextFieldBlockComponent = (
   {className}
   :
-  {className: string}) => (
+  {className?: string}) => (
   <div className={className}>
     <BlockButtonElement
       formBlock={TextFieldBlock as any}
@@ -42,7 +42,7 @@ export const TextFieldBlockComponent = (
 export const TextAreaBlockComponent = (
   {className}
   :
-  {className: string}
+  {className?: string}
 ) => (
   <div className={className}>
     <BlockButtonElement
@@ -56,7 +56,7 @@ export const TextAreaBlockComponent = (
 export const StarRatingBlockComponent = (
   {className}
   :
-  {className: string}
+  {className?: string}
 ) => (
   <div className={className}>
     <BlockButtonElement
@@ -70,7 +70,7 @@ export const StarRatingBlockComponent = (
 export const ParagraphBlockComponent = (
   {className}
   :
-  {className: string}
+  {className?: string}
 ) => (
   <div className={className}>
     <BlockButtonElement
@@ -84,7 +84,7 @@ export const ParagraphBlockComponent = (
 export const HeadingBlockComponent = (
   {className}
   :
-  {className: string}) => (
+  {className?: string}) => (
   <div className={className}>
     <BlockButtonElement
       formBlock={HeadingBlock as any}

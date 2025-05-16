@@ -1,20 +1,19 @@
 "use client";
-import {
-  RegisterLink,
-  LoginLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
 import { motion, useInView, useMotionValueEvent, useScroll } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
-import TapeSection from "./_components/tape";
 import LandingPageCard from "./_components/landingPageCard";
 import InteractiveHero from "./_components/heroSection";
+import { CallToActionButton } from "./_components/callToActionButton";
+import Integrations from "./_components/integrations";
 
 export default function LandingPage() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
+  const ref3 = useRef(null);
 
   const inView1 = useInView(ref1, { once: true });
   const inView2 = useInView(ref2, { once: true });
+  const inView3 = useInView(ref3, { once: true });
 
   interface Dot {
     x: number;
@@ -218,8 +217,7 @@ export default function LandingPage() {
    }, [handleResize, handleMouseMove, animateDots])
   
   return (
-    <main className=" bg-[#111111] relative text-gray-300 min-h-[200vh] flex flex-col overflow-x-hidden">
-      
+    <main className=" bg-[#111111] relative text-gray-300 min-h-[200vh] flex flex-col overflow-none overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 opacity-80" />
       <div className="absolute inset-0 z-1" style={{
             background: 'linear-gradient(to bottom, transparent 0%, #111111 300%), radial-gradient(ellipse at center, transparent 40%, #111111 100%)'
@@ -227,7 +225,7 @@ export default function LandingPage() {
         <InteractiveHero/>
       <section className="mt-64 mb-16 flex justify-center items-center flex-col">
         <motion.h2
-          className="text-xl mb-8 md:text-5xl font-semibold text-white"
+          className="text-6xl z-10 tracking-wide mb-12 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center"
           ref={ref1}
           initial={{ opacity: 0, x: "-50%" }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -242,13 +240,12 @@ export default function LandingPage() {
           <LandingPageCard 
           title="Use AI to make or edit forms for you"   
            description="Formly uses Gemini 2.0 Flash, it's the light purple sparkles button on the left sidebar."
-           imageUrl="/formlyai.PNG"/>
+           imageUrl="/images/formlyai.PNG"/>
         </div>
       </section>
-      <TapeSection />
       <section className="mt-20 mb-16 flex justify-center items-center flex-col">
         <motion.h2
-          className="text-xl mb-8 md:text-5xl font-semibold text-white"
+          className="z-10 tracking-wide mt-16 mb-12 text-6xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center"
           ref={ref2}
           initial={{ opacity: 0, x: "50%" }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -260,22 +257,28 @@ export default function LandingPage() {
           <LandingPageCard 
           title="Track and share your form responses in real time"
           description="See all your form's responses. You can also copy a link to share your form."
-          imageUrl="/formlyres.PNG" />
+          imageUrl="/images/formlyres.PNG" />
           <LandingPageCard 
           title="Analytics on how your forms are performing"
           description="See how people interact with your form, with realtime stats on views and responses." 
-          imageUrl="/formstats.PNG" />
+          imageUrl="/images/formstats.PNG" />
         </div>
       </section>
-      <div className="flex flex-col justify-center my-24">
-        <h2 className="text-3xl text-centerd md:text-5xl font-semibold text-white">
-          Try us out free.
-        </h2>
-      </div>
+      <section className=" my-20 flex justify-center z-20">
+      
+      {/* ICON SLIDING VERTICAL */}
+      <Integrations/>
+      </section>
+        <section className="z-10 my-24 flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <h2 className="z-10 text-center text-6xl font-semibold  text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff]">
+            Try us out free.
+          </h2>
+          <CallToActionButton/>
+        </section>
       <footer className="text-xs sm:text-sm md:text-md flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-10 md:gap-24 text-white">
-        <span className="pb-6">Sandoval Software - 2025</span>
-        <span className="pb-6">Tracy Sandoval</span>
-        <span className="pb-6">trxcycsgo@gmail.com</span>
+        <span className="pb-6 z-10">Sandoval Software - 2025</span>
+        <span className="pb-6 z-10">Tracy Sandoval</span>
+        <span className="pb-6 z-10">trxcycsgo@gmail.com</span>
       </footer>
     </main>
   );

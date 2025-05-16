@@ -14,17 +14,18 @@ const LandingPageCard = ({
 }) => {
   return (
     <Card
-      className={` sm:w-[550px] lg:w-[1000px] mt-8 z-30 hover:rotate-3
-        transition-all duration-300  sm:h-[300] lg:h-[600px] p-6
-     bg-[hsl(30,90%,90%)] shadow-md rounded-lg ${className}`}
+      className={` sm:w-[550px] lg:w-[1000px] mt-8 z-30
+        hover:ring-2 ring-primary
+        transition-all duration-500  sm:h-[300] lg:h-[600px] p-6 border-none
+     bg-white/10 rounded-lg ${className}`}
     >
-      <p className="text-2xl font-semibold lg:text-2xl text-center text-gray-900">
+      <p className="text-2xl font-semibold italic lg:text-2xl text-center text-white">
         {title}
       </p>
-      <p className="text-md mt-2 tracking-tight text-center text-gray-900">
+      <p className="text-md mt-2 tracking-tight text-center text-white">
         {description}
       </p>
-      <div className="border rounded-md mt-3">
+      <div className="rounded-md mt-3">
         <img
           src={imageUrl}
           className="object-cover rounded-md w-full h-full"
