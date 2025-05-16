@@ -640,7 +640,7 @@ const InteractiveHero: React.FC = () => {
           variants={headlineVariants}
           initial="hidden"
           animate="visible"
-          className="text-6xl font-semibold text-white leading-tight max-w-4xl mb-4"
+          className="text-6xl sm:text-8xl font-semibold text-white leading-tight max-w-6xl mb-4"
         >
           Create and manage
           <br />{" "}
@@ -712,7 +712,7 @@ const InteractiveHero: React.FC = () => {
           variants={imageVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-4xl justify-center px-4 sm:px-0 flex flex-col sm:flex-row"
+          className="w-full max-w-7xl justify-center px-4 sm:px-0 flex flex-col sm:flex-row"
         >
           <div className="hidden sm:flex flex-col gap-12 mx-8 items-center justify-center">
             <StarRatingBlockComponent />
