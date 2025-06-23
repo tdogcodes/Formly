@@ -623,7 +623,7 @@ const InteractiveHero: React.FC = () => {
 
   return (
     <div className="pt-[100px] relative text-gray-300 min-h-screen flex flex-col overflow-x-hidden">
-      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 pt-8 pb-16 relative z-10">
+      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 pt-8 md:pb-16 relative z-10">
         <motion.div
           variants={bannerVariants}
           initial="hidden"
@@ -729,7 +729,7 @@ const InteractiveHero: React.FC = () => {
             loading="lazy"
           />
 
-          <div className="hidden sm:flex flex-col gap-12 mx-8 items-center justify-center">
+          <div className="hidden sm:flex flex-col  gap-12 mx-8 items-center justify-center">
             <RadioBlockComponent />
             <TextFieldBlockComponent  />
             <TextAreaBlockComponent  />

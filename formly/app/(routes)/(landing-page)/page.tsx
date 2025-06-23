@@ -223,7 +223,7 @@ export default function LandingPage() {
             background: 'linear-gradient(to bottom, transparent 0%, #111111 300%), radial-gradient(ellipse at center, transparent 40%, #111111 100%)'
         }}></div>
         <InteractiveHero/>
-      <section className="mt-64 mb-16 flex justify-center items-center flex-col">
+      <section className="mt-32 md:mt-64 mb-16 flex justify-center items-center flex-col">
         <motion.h2
           className="z-10 mt-16 font-medium mb-12 text-6xl text-transparent bg-clip-text bg-gradient-to-r from-[#ffffff] to-[#aa78ff] text-center"
           ref={ref1}
@@ -275,7 +275,7 @@ export default function LandingPage() {
           </h2>
           <CallToActionButton/>
         </section>
-      <footer className="text-xs sm:text-sm md:text-md flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-10 md:gap-24 text-white">
+      <footer className="text-xs sm:text-sm md:text-md flex sm:flex-row justify-center items-center  gap-10 md:gap-24 text-white">
         <span className="pb-6 z-10">Sandoval Software - 2025</span>
         <span className="pb-6 z-10">Tracy Sandoval</span>
         <span className="pb-6 z-10">trxcycsgo@gmail.com</span>

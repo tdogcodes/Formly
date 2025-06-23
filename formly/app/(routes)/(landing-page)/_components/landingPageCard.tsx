@@ -15,11 +15,10 @@ const LandingPageCard = ({
   return (
     <Card
       className={` sm:w-[550px] lg:w-[1000px] mt-8 z-30
-        hover:ring-2 ring-primary
         transition-all duration-500  sm:h-[300] lg:h-[600px] p-6 border-none
-     bg-white/10 rounded-lg ${className}`}
+     bg-black/30 rounded-lg ${className}`}
     >
-      <p className="text-2xl font-semibold italic lg:text-2xl text-center text-white">
+      <p className="text-2xl font-semibold lg:text-2xl text-center text-white">
         {title}
       </p>
       <p className="text-md mt-2 tracking-tight text-center text-white">
