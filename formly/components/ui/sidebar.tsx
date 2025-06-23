@@ -53,7 +53,7 @@ function useSidebar() {
   return context;
 }
 
-const SidebarProvider = React.forwardRef<
+const  SidebarProvider = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & {
     defaultOpen?: boolean;

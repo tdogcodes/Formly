@@ -3,9 +3,9 @@ import React from "react";
 import { MousePointerClickIcon, Save, Send } from "lucide-react";
 import { useBuilder } from "@/context/builderProvider";
 import { FormBlocks } from "@/lib/formBlocks";
-import PreviewDialog from "./_common/previewDialog";
-import SaveFormButton from "./_common/saveFormButton";
-import PublishFormButton from "./_common/publishFormButton";
+import PreviewDialog from "../../dashboard/_components/_common/previewDialog";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const BuilderBlockProperties = () => {
   const { selectedBlockLayout } = useBuilder();
@@ -30,8 +30,29 @@ const BuilderBlockProperties = () => {
                  bg-white pb-2 pt-3 sticky border-b border-gray-200 top-0 gap-2 px-2"
           >
             <PreviewDialog />
-            <SaveFormButton />
-            <PublishFormButton />
+            <Button
+                  variant="outline"
+                  size="sm"
+                  disabled={true}
+                  className={cn(
+                    `
+                    !text-primary
+                    !bg-primary/10 !border-primary
+                        `,
+                  )}
+                >
+                <Save />
+                  Save
+            </Button>
+            <Button
+                  disabled={true}
+                  size="sm"
+                  variant={"default"}
+                  className="!bg-primary text-white"
+                >
+                      <Send />
+                      Publish
+                </Button>
           </div>
 
           {/* Layout Properties */}

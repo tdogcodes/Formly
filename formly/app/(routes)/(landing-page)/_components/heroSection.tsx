@@ -31,6 +31,7 @@ import {
   TextFieldBlockComponent,
 } from "./animatedBlocks";
 import ShinyText from "./shinyText";
+import Link from "next/link";
 
 function cn(...classes: (string | undefined | null | boolean)[]): string {
   return classes.filter(Boolean).join(" ");
@@ -680,7 +681,7 @@ const InteractiveHero: React.FC = () => {
         >
           <RegisterLink>
             <motion.button
-              className="w-full sm:w-auto bg-[#aa78ff] tracking-wide text-[#111111] px-5 py-2 rounded-md text-md font-semibold hover:bg-opacity-90 transition-colors duration-200 whitespace-nowrap shadow-sm hover:shadow-md flex-shrink-0"
+              className="w-full sm:w-auto bg-[#aa78ff] tracking-wide text-white px-5 py-2 rounded-md text-md font-semibold hover:bg-opacity-90 transition-colors duration-200 whitespace-nowrap shadow-sm hover:shadow-md flex-shrink-0"
               whileHover={{ scale: 1.03, y: -1 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 15 }}
@@ -698,6 +699,16 @@ const InteractiveHero: React.FC = () => {
               Log in
             </motion.button>
           </LoginLink>
+           <Link href="/test-editor">
+             <motion.button
+                className="w-full sm:w-auto bg-white tracking-wide text-black px-5 py-2 rounded-md text-md font-semibold hover:bg-opacity-90 transition-colors duration-200 whitespace-nowrap shadow-sm hover:shadow-md flex-shrink-0"
+                whileHover={{ scale: 1.03, y: -1 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              >
+                Try as Guest
+              </motion.button>
+           </Link>
         </motion.section>
 
         <motion.p
